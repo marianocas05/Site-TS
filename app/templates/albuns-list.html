@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Álbuns:</h1>
+<table>
+  <tr>
+    <th>
+      <b>AlbumId</b>
+    </th>
+    <th>
+      <b>Titulo</b>
+    </th>
+    <th>
+      <b>Ano de Lançamento</b>
+    </th>
+    <th>
+        <b>Editora</b>
+    </th>
+  </tr>
+
+  {% for album in albuns %}
+  <tr>
+    <td>
+      <a href="/albuns/{{ album.albumId }}">{{ album.albumId }}</a>
+    </td>
+    <td>
+      {{ album.titulo }}
+    </td>
+    <td>
+      {{ album.ano_de_lancamento }}
+    </td>
+    <td>
+        {{ album.editora }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

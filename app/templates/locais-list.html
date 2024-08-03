@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Locais dos Concertos:</h1>
+<table>
+  <tr>
+    <th>
+      <b>LocalId</b>
+    </th>
+    <th>
+      <b>País</b>
+    </th>
+    <th>
+      <bto>Cidade</b>
+    </th>
+    <th>
+        <b>Estádio</b>
+    </th>
+  </tr>
+
+  {% for l in locais%}
+  <tr>
+    <td>
+      <a href="/locais/{{ l.localId }}">{{ l.localId }}</a>
+    </td>
+    <td>
+      {{ l.pais }}
+    </td>
+    <td>
+      {{ l.cidade }}
+    </td>
+    <td>
+      {{ l.estadio }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>{{ musicas.titulo }}</h1>
+  <div class="section">
+  <p>
+    <b>ID da Música: </b>{{ musicas.musicaId }}
+  </p>
+  <p>
+    <b>Duração: </b>{{ musicas.duracao }} minutos
+  </p>
+  <p>
+    <b>From the Vault? </b>{{ musicas.from_the_vault }}
+  </p>
+
+  <p>
+    <b>Álbum: </b>
+    <a href="/albuns/{{ musicas.albumId }}">{{ musicas.album_titulo }}</a>
+  </p>
+
+  <p>
+    <b>Colaborações: </b>
+    {% if artistas_convidados %}
+      <ul>
+        {% for a in artistas_convidados %}
+          <li>
+            <a href="/colaboracoes/{{ a.artistaId }}">{{ a.nome }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <em>Não há colaboração nesta música.</em>
+    {% endif %}
+  </p>
+  </div>
+{% endblock %}

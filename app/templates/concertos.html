@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Concerto {{ concertos.concertoId}}</h1>
+<div class="section">
+  {% if concertos.comparecimento is not none %}
+    <p>
+      <b>Comparecimento: </b>{{ concertos.comparecimento }} pessoas
+    </p>
+  {% else %}
+    <p>
+      <em>Não temos informação sobre o comparecimento neste concerto.</em>
+    </p>
+  {% endif %}
+
+  {% if concertos.receita is not none %}
+    <p>
+      <b>Receita: </b>{{ concertos.receita }}
+    </p>
+  {% else %}
+    <p>
+      <em>Não temos informação sobre a receita deste concerto.</em>
+    </p>
+  {% endif %}
+
+  <p>
+    <b>Estádio: </b>
+    <ul>
+      {% for l in locais %}
+      <li>
+        <a href="/locais/{{ l.localId }}">{{ l.estadio }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </p>
+
+  <p>
+    <b>Ato de Abertura: </b>
+    {% if artistas_convidados %}
+      <ul>
+        {% for a in artistas_convidados %}
+          <li>
+            <a href="/abertura/{{ a.artistaId }}">{{ a.nome }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <em>Não aconteceu ato de abertura neste concerto.</em>
+    {% endif %}
+  </p>
+</div>
+{% endblock %}

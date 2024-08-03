@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{albuns.titulo}}</h1>
+<div class="section">
+<p>
+  <b>ID do Álbum: </b>{{ albuns.albumId }}
+</p>
+<p>
+  <b>Ano de Lançamento: </b>{{ albuns.ano_de_lancamento }}
+</p>
+<p>
+  <b>Género: </b>{{ albuns.genero }}
+</p>
+<p>
+  <b>Editora: </b>{{ albuns.editora }}
+</p>
+<p>
+  <b>Re-Gravação? </b>{{ albuns.re_gravacao }}
+</p>
+<p>
+  <b>Músicas: </b>
+<ul>
+  {% for m in musicas %}
+  <li>
+    <a href="/musicas/{{ m.musicaId }}">{{ m.titulo }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+<p>
+  <b>Produtores: </b>
+<ul>
+  {% for p in produtores %}
+  <li>
+    <a href="/produtores/{{ p.produtorId }}">{{ p.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+</p>
+</div>
+{% endblock %}

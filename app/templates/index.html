@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+  <h1>"Welcome to New York!"</h1>
+
+  <p>Este site contém uma base de dados com informações sobre o trabalho da renomeada artista Taylor Swift.</p>
+
+  <h2>Explore Taylor's Universe</h2>
+
+  <div class="section">
+      <h3>Álbuns:</h3>
+      <p>
+          <a href="/albuns">Listar todos</a>
+      </p>
+      <form name="mid" action="javascript:window.open('/albuns/'+document.forms['mid'].elements['id'].value,'_self')" method="get">
+          <label for="albumId">Álbum Id:</label>
+          <input id="albumId" name="id" type="number" min="1" placeholder="Inserir Álbum Id" required/>
+          <input type="submit" value="ir"/>
+      </form>
+      <p>Procurar por título:
+          <form name="asearch" action="javascript:window.open('/albuns/search/'+document.forms['asearch'].elements['expr'].value,'_self')" method="get">
+              <input name="expr" id="expr" value="Taylor" required/>
+              <input type="submit" value="procurar"/>
+          </form>
+      </p>
+  </div>
+
+  <div class="section">
+      <h3>Músicas:</h3>
+      <p>
+          <a href="/musicas">Listar todas</a>
+      </p>
+      <form name="oi" action="javascript:window.open('/musicas/'+document.forms['oi'].elements['id'].value,'_self')" method="get">
+          <label for="musicId">Música Id:</label>
+          <input id="musicId" name="id" type="number" min="1" placeholder="Inserir Musica Id" required/>
+          <input type="submit" value="ir"/>
+      </form>
+      <p>Procurar por título:
+          <form name="msearch" action="javascript:window.open('/musicas/search/'+document.forms['msearch'].elements['expr'].value,'_self')" method="get">
+              <input name="expr" id="expr" value="Cruel Summer" required/>
+              <input type="submit" value="procurar"/>
+          </form>
+      </p>
+  </div>
+
+  <div class="section">
+      <h3>Concertos:</h3>
+      <p>
+          <a href="/locais">Listar todos</a>
+      </p>
+      <form name="ola" action="javascript:window.open('/concertos/'+document.forms['ola'].elements['id'].value,'_self')" method="get">
+          <label for="concertId">Concerto Id:</label>
+          <input id="concertId" name="id" type="number" min="1" placeholder="Inserir Concerto Id" required/>
+          <input type="submit" value="ir"/>
+      </form>
+      <p>Procurar por país (em inglês):
+          <form name="csearch" action="javascript:window.open('/locais/search/'+document.forms['csearch'].elements['expr'].value,'_self')" method="get">
+              <input name="expr" id="expr" value="Japan" required/>
+              <input type="submit" value="procurar"/>
+          </form>
+      </p>
+  </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2023 Universo Taylor Swift. All rights reserved.</p>
+    <p>up202205006 Mariana Ferreira</p>
+    <p>up202205522 Gonçalo Luz</p>
+    <p>up202206827 Raquel Alves</p>
+</footer>
+
+{% endblock %}
