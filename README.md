@@ -3,10 +3,8 @@
 
 ## Programação
 
-A estrutura deverá ser similar à da aplicação MovieStreamApp que vimos nas aulas ([slides das aulas teóricas](https://moodle2324.up.pt/mod/resource/view.php?id=96059), [código no GitHub](https://github.com/edrdo/MovieStreamApp)):
+A estrutura deverá ser similar à da aplicação MovieStreamApp que se viu nas aula ([código no GitHub](https://github.com/edrdo/MovieStreamApp)):
 
-Deve editar o código Python da aplicação em `app.py`. Cada "endpoint" da aplicação  deve efectuar uma ou mais interrogações à base de dados e utilizar os dados obtidos para gerar HTML usando templates Jinja.
-Deve colocar as templates de geração de HTML (uma por "endpoint") na pasta `templates`.
 
 ### Exemplo na MovieStreamApp 
 
@@ -37,63 +35,18 @@ Informação de um filme - "endpoint" `/movies/int:id`:
 
 ## Instalação de software
 
-Precisa de ter o Python 3 e o gestor de pacotes pip instalado.
-Experimente executar `python3 --version` e `pip3 --version` para saber
-se já estão instalados. Em caso negativo, pode por exemplo em Ubuntu
-executar:
+Precisas de ter o Python 3 e o gestor de pacotes pip instalado.
+
 
 ```
 sudo apt-get install python3 python3-pip
 ```
 
-Tendo Python 3 e pip instalados, deve instalar a biblioteca `Flask` executando o comando:
+Tendo Python 3 e pip instalados, deves instalar a biblioteca `Flask` executando o comando:
 
 ```
 pip3 install --user Flask
 ``` 
-
-## Configuração de acesso à BD
-
-Edite o ficheiro `db.py` no que se refere à configuração da sua BD, modificando os parâmetros `DB_FILE` que indique o ficheiro da base de dados. O ficheiro SQLite para a BD deve residir na mesma pasta que o ficheiro `app.py`.
-
-Configurados o parâmetro `DB_FILE`,  teste o acesso executando:
-
-```
-python3 test_db_connection.py NOME_DE_UMA_TABELA
-```
-
-Se a configuração do acesso à BD estiver correcto, deverá ser listado o conteúdo da tabela `NOME_DE_UMA_TABELA`, por ex. se a BD configurada fosse a dos recintos culturais e quisermos listar a tabela `atividades` obteríamos:
-
-```
-$ python3 test_db_connection.py atividades
-6 results ...
-[('ref', 1), ('atividade', 'cinema')]
-[('ref', 2), ('atividade', 'circo')]
-[('ref', 3), ('atividade', 'dança')]
-[('ref', 4), ('atividade', 'música')]
-[('ref', 5), ('atividade', 'tauromaquia')]
-[('ref', 6), ('atividade', 'teatro')]
-```
-
-## Execução do servidor da aplicação
-
-Depois de configurar a BD como descrito acima, pode agora iniciar o servidor da aplicação executando `python3 server.py`, ex.:
-
-```
-$ python3 server.py
-2021-05-18 21:40:46 - INFO - Connected to database guest
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server.  Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
-2021-12-08 21:40:46 - INFO -  * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit) 
-...
-```
-
-De seguida abra no seu browser __http://127.0.0.1:9000__ ou __http://localhost:9000__. Deverá ver uma página com uma mensagem __Hello World!__ da forma ilustrada na imagem a seguir.
-
-![](static/app_screenshot.png)
 
 ## Mais referências
 
