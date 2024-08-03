@@ -1,4 +1,4 @@
-# Desenvolvimento da aplicação da 2ª parte do projeto
+# Desenvolvimento da aplicação
 
 
 ## Programação
